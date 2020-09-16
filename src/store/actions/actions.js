@@ -98,9 +98,10 @@ export const fetchFoodItemsFailed = ()=>{
 
 export const getFoodItems = () =>{
     return dispatch =>{
-        const url="https://api.jsonbin.io/b/5ec694b118c8475bf16da1e3";
+        const url="http://192.168.1.111:5000/api/resturant";
         axios.get(url)
 			.then(response => {
+                console.log("vayo")
                     dispatch(setFoodItems(response.data))
             })
             .catch(error =>{
@@ -120,12 +121,14 @@ export const setRestaurants = (restaurants)=>{
 
 export const getRestaurants = ()=>{
     return dispatch=>{
-        const url="https://api.jsonbin.io/b/5ec69449e91d1e45d10e96bc";
+        const url="http://192.168.1.111:5000/api/food";
         axios.get(url)
 			.then(response => {
-                    dispatch(setRestaurants(response.data))
+                dispatch(setRestaurants(response.data))
+                    
             })
             .catch(error =>{
+                
                     dispatch(fetchFoodItemsFailed())
             });
     }

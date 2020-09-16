@@ -45,8 +45,11 @@ class AutomateOrder extends Component{
         }
 
     getRestaurants = (foodName,foodQuantity)=>{
-        const url="https://api.jsonbin.io/b/5ec69449e91d1e45d10e96bc";
-        axios.get(url).then((response)=>{
+        const url="https://api.jsonbin.io/b/5f5de56b7243cd7e823b416e";
+        axios.get(url, {
+            headers: {
+                "secret-key": '$2b$10$ArXzN80JEc3kIl/GyqMAJ.Fr0TQGIukPjpw1gCTK0HUCrvpU3/um.'
+            }}).then((response)=>{
             this.setState({
                 items:response.data
             });

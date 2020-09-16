@@ -3,7 +3,7 @@ import Auxillary from '../hoc/Auxillay';
 import Header from './Header/Header';
 import FoodLists from '../Components/FoodLists/FoodLists';
 import SideDrawer from '../Components/SideDrawer/SideDrawer';
-
+import FoodList from '../Components/FoodList/FoodList';
 import {connect} from 'react-redux';
 import * as actionCreators from  '../store/actions/actions';
 
@@ -43,6 +43,7 @@ class layout extends Component{
         <FoodLists 
             setCartTotal = {this.setCartTotal}
             filteredValue = {this.props.filteredFood}  />
+      
         </Auxillary>
     }
 }
